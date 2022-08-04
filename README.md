@@ -2,6 +2,15 @@
 
 # Huff - Ethernaut MagicNumber Solver
 
+## Solver.huff
+```js
+#define macro MAIN() = takes (0) returns (0) {
+    0x2a // PUSH1 42
+    0x00 mstore // MSTORE 0x00
+    0x20 0x00 return // RETURN 0x00 0x20
+}
+```
+
 ## Test
 ```sh
 forge test -vvvv
