@@ -14,4 +14,10 @@ contract Deploy is Script {
         vm.broadcast();
         MagicNum(instanceAddress).setSolver(solverAddress);
     }
+
+    function runShortest(address instanceAddress) public {
+        address solverAddress = HuffDeployer.broadcast("SolverShortest");
+        vm.broadcast();
+        MagicNum(instanceAddress).setSolver(solverAddress);
+    }
 }
