@@ -9,18 +9,16 @@ Ethernaut MagicNumber: https://ethernaut.openzeppelin.com/level/0x200d3d9Ac7bFd5
 ## Solver.huff (10 bytes)
 ```js
 #define macro MAIN() = takes (0) returns (0) {
-    0x2a // PUSH1 42
-    0x00 mstore // MSTORE 0x00
-    0x20 0x00 return // RETURN 0x00 0x20
+    0x2a 0x00 mstore // mstore(offset, value)
+    0x20 0x00 return // return(offset, size)
 }
 ```
 
 ## SolverShortest.huff (7 bytes)
 ```js
 #define macro MAIN() = takes (0) returns (0) {
-    0x2a // PUSH1 42
-    returndatasize mstore // MSTORE 0x00
-    msize returndatasize return // RETURN 0x00 0x20
+    0x2a returndatasize mstore  // mstore(offset, value)
+    msize returndatasize return // return(offset, size)
 }
 ```
 
